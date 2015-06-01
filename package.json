@@ -1,0 +1,19 @@
+{
+  "name": "Gulp",
+  "version": "1.0.0",
+  "description": "Gulpfile.js that works on css files",
+  "main": "Gulpfile.js",
+  "author": "Zura Gabievi <zura.gabievi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "set ENV=development && gulp css",
+    "start": "set ENV=production && gulp css"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-clean": "^0.3.1",
+    "gulp-if": "^1.2.5",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-sass": "^2.0.1"
+  }
+}
