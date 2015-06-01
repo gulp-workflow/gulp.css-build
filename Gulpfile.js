@@ -20,25 +20,28 @@ gulp.task('css:copy', function() {
 	gulp.src('./bower_components/neat/app/assets/stylesheets/**/*').pipe(gulp.dest('./dist/assets/sass/neat'));
 });
 
-//gulp.task('css:build', ['css:clean', 'css:copy'], function() {
-//	return gulp.src('./src/assets/js/*.' + EXT.trim())
-//		.pipe($.plumber())
-//			.pipe($.sourcemaps.init())
-//				.pipe()
-//				.pipe($.concat('bundle.js'))
-//			.pipe($.sourcemaps.write())
-//		.pipe($.plumber.stop())
-//		.pipe($.size())			
-//		.pipe($.if(ENV.trim() == 'production', gulp.dest('./dist/assets/js')))
-//		.pipe($.plumber())
-//			.pipe($.rename({suffix: '.min'}))
-//			.pipe($.if(ENV.trim() == 'production', $.uglify()))
-//		.pipe($.plumber.stop())
-//		.pipe(gulp.dest('./dist/assets/css'));
-//});
-//
-//gulp.task('css:watch', ['css:build'], function() {
-//	gulp.watch('./src/assets/sass/**/*.' + EXT.trim(), ['css:build']);
-//});
-//
-//gulp.task('css', ['css:watch']);
+// build task
+gulp.task('css:build', ['css:clean', 'css:copy'], function() {
+	return gulp.src('./src/assets/js/*.' + EXT.trim())
+		.pipe($.plumber())
+			.pipe($.sourcemaps.init())
+				.pipe($.sass())
+				.pipe($.autoprefixer(['last 2 versions']))
+			.pipe($.sourcemaps.write())
+		.pipe($.plumber.stop())
+		.pipe($.size())			
+		.pipe($.if(ENV.trim() == 'production', gulp.dest('./dist/assets/css')))
+		.pipe($.plumber())
+			.pipe($.rename({suffix: '.min'}))
+			.pipe($.if(ENV.trim() == 'production', $.minifyCss()))
+		.pipe($.plumber.stop())
+		.pipe(gulp.dest('./dist/assets/css'));
+});
+
+// watch task
+gulp.task('css:watch', ['css:build'], function() {
+	gulp.watch('./src/assets/sass/**/*.' + EXT.trim(), ['css:build']);
+});
+
+// default task
+gulp.task('css', ['css:watch']);
