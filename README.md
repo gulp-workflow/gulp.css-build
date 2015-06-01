@@ -3,7 +3,7 @@ Gulpfile.js that works on css files
 
 ## Dependencies
 - ["gulp": "^3.8.11"](https://npmjs.org/package/gulp/)
-- ["gulp-clean": "^0.3.1"](https://www.npmjs.com/package/gulp-clean/)
+- ["del": "^1.2.0"](https://www.npmjs.com/package/del/)
 - ["gulp-if": "^1.2.5"](https://www.npmjs.com/package/gulp-if/)
 - ["gulp-load-plugins": "^0.10.0"](https://www.npmjs.com/package/gulp-load-plugins/)
 - ["gulp-plumber": "^1.0.1"](https://www.npmjs.com/package/gulp-plumber/)
