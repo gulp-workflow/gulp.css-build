@@ -16,16 +16,16 @@ gulp.task('css:clean', function() {
 
 // copy task
 gulp.task('css:copy', function() {
-	gulp.src('./bower_components/bourbon/app/assets/stylesheets/**/*').pipe(gulp.dest('./dist/assets/sass/bourbon'));
-	gulp.src('./bower_components/neat/app/assets/stylesheets/**/*').pipe(gulp.dest('./dist/assets/sass/neat'));
+	gulp.src('./bower_components/bourbon/app/assets/stylesheets/**/*').pipe(gulp.dest('./src/assets/sass/bourbon'));
+	gulp.src('./bower_components/neat/app/assets/stylesheets/**/*').pipe(gulp.dest('./src/assets/sass/neat'));
 });
 
 // build task
 gulp.task('css:build', ['css:clean', 'css:copy'], function() {
-	return gulp.src('./src/assets/js/*.' + EXT.trim())
+	return gulp.src('./src/assets/sass/*.' + EXT.trim())
 		.pipe($.plumber())
 			.pipe($.sourcemaps.init())
-				.pipe($.sass())
+				.pipe($.sass({outputStyle: 'expanded'}))
 				.pipe($.autoprefixer(['last 2 versions']))
 			.pipe($.sourcemaps.write())
 		.pipe($.plumber.stop())
@@ -33,7 +33,7 @@ gulp.task('css:build', ['css:clean', 'css:copy'], function() {
 		.pipe($.if(ENV.trim() == 'production', gulp.dest('./dist/assets/css')))
 		.pipe($.plumber())
 			.pipe($.rename({suffix: '.min'}))
-			.pipe($.if(ENV.trim() == 'production', $.minifyCss()))
+			.pipe($.if(ENV.trim() == 'production', $.minifyCss({advanced: false})))
 		.pipe($.plumber.stop())
 		.pipe(gulp.dest('./dist/assets/css'));
 });
