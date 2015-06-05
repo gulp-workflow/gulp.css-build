@@ -1,6 +1,7 @@
 # gulp.css-build
 Gulpfile.js that works on css files
 
+[![GitHub version](https://badge.fury.io/gh/zgabievi%2Fgulp.css-build.svg)](http://badge.fury.io/gh/zgabievi%2Fgulp.css-build)
 [![Build Status](https://semaphoreci.com/api/v1/projects/0f614987-2cbb-4c62-af30-ef6bf0b3978b/444278/shields_badge.svg)](https://semaphoreci.com/zgabievi/gulp-css-build)
 
 ## Dependencies
