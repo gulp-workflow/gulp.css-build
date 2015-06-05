@@ -1,2 +1,5 @@
 bower_components
 node_modules
+
+src/assets/sass/bourbon
+src/assets/sass/neat

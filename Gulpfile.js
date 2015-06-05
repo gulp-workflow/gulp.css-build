@@ -31,10 +31,10 @@ gulp.task('css:build', ['css:clean', 'css:copy'], function() {
 			.pipe($.sourcemaps.write())
 		.pipe($.plumber.stop())
 		.pipe($.size())			
-		.pipe($.if(ENV.trim() == 'production', gulp.dest('./dist/assets/css')))
+		.pipe($.if(ENV.trim() === 'production', gulp.dest('./dist/assets/css')))
 		.pipe($.plumber())
 			.pipe($.rename({suffix: '.min'}))
-			.pipe($.if(ENV.trim() == 'production', $.minifyCss({advanced: false})))
+			.pipe($.if(ENV.trim() === 'production', $.minifyCss({advanced: false})))
 		.pipe($.plumber.stop())
 		.pipe(gulp.dest('./dist/assets/css'));
 });
