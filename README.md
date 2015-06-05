@@ -4,6 +4,8 @@ Gulpfile.js that works on css files
 [![GitHub version](https://badge.fury.io/gh/zgabievi%2Fgulp.css-build.svg)](http://badge.fury.io/gh/zgabievi%2Fgulp.css-build)
 [![Build Status](https://semaphoreci.com/api/v1/projects/0f614987-2cbb-4c62-af30-ef6bf0b3978b/444278/shields_badge.svg)](https://semaphoreci.com/zgabievi/gulp-css-build)
 [![Codacy Badge](https://www.codacy.com/project/badge/c68621e422a047ffb78f63691290b09b)](https://www.codacy.com/app/zgabievi/gulp-css-build)
+[![Dependency Status](https://david-dm.org/zgabievi/gulp.css-build.svg)](https://david-dm.org/zgabievi/gulp.css-build)
+[![devDependency Status](https://david-dm.org/zgabievi/gulp.css-build/dev-status.svg)](https://david-dm.org/zgabievi/gulp.css-build#info=devDependencies)
 
 ## Dependencies
 - ["gulp": "^3.8.11"](https://npmjs.org/package/gulp/)
